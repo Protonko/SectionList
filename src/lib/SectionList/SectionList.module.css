@@ -1,0 +1,30 @@
+.sectionListSectionItemHeader {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.sectionListItems {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+}
+
+.listReset {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.sectionListLoader {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    text-align: center;
+}
+
+.sectionListSections {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
