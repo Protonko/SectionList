@@ -2,7 +2,7 @@ import type {DemoData} from './demoData'
 import {useCallback, useEffect, useState} from 'react'
 import {Section, SectionList} from 'lib'
 import {Loader} from './Loader'
-import styles from './DemoSectionList.module.css'
+import './DemoSectionList.css'
 
 const LIMIT = 10
 const MAX_COUNT = 200
@@ -48,16 +48,16 @@ export const DemoSectionList = () => {
 
   const renderItem = useCallback((elem: DemoData) => {
     return (
-      <div className={styles.card}>
-        <span className={styles.cardTitle}>{elem.title}</span>
-        <span className={styles.cardDescription}>user: {elem.userId}</span>
+      <div className='card'>
+        <span className='card__title'>{elem.title}</span>
+        <span className='card__description'>user: {elem.userId}</span>
       </div>
     )
   }, [sections])
 
   const renderSectionHeader = useCallback((section: Section<DemoData>) => {
     return (
-      <h2 className={styles.sectionHeader}>
+      <h2 className='secion-list__header'>
         {section.title}
       </h2>
     )
@@ -73,7 +73,7 @@ export const DemoSectionList = () => {
 
   return (
     <SectionList<DemoData>
-      className={styles.sectionList}
+      className='section-list'
       ListEmptyComponent={<EmptyComponent />}
       ListFooterComponent={renderLoader()}
       keyExtractor={keyExtractor}

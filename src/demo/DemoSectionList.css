@@ -5,21 +5,21 @@
     box-sizing: border-box;
 }
 
-.cardTitle {
+.card__title {
     font-weight: bold;
     display: block;
 }
 
-.cardDescription {
+.card__description {
     display: block;
     color: darkslateblue;
 }
 
-.sectionHeader {
+.section-list__header {
     color: navy;
 }
 
-.sectionList [data-element="section-data"] {
+.section-list [data-element="section-data"] {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }

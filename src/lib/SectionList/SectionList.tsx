@@ -1,5 +1,5 @@
 import {useRef, ReactNode, ReactElement, useEffect} from 'react'
-import styles from './SectionList.module.css'
+import './SectionList.css'
 import {genericMemo} from '../genericMemo'
 
 export interface Section<T> {
@@ -71,7 +71,7 @@ export const SectionList = genericMemo(<T,>({
   const _renderSectionHeader = (data: Section<T>) => {
     if (renderSectionHeader) {
       return (
-        <div className={styles.sectionListSectionItemHeader}>
+        <div data-element='section-header'>
           {renderSectionHeader(data)}
         </div>
       )
@@ -86,7 +86,7 @@ export const SectionList = genericMemo(<T,>({
         <li key={data.title} data-element='section'>
           {_renderSectionHeader(data)}
           <div data-element='section-header'>
-            <ul className={`${styles.sectionListItems} ${styles.listReset}`} data-element='section-data'>
+            <ul data-element='section-data'>
               {data.data.map(renderSectionItem)}
             </ul>
           </div>
@@ -100,7 +100,7 @@ export const SectionList = genericMemo(<T,>({
   if (sections.length) {
     return (
       <div className={sectionListClassNames} data-element='section-list'>
-        <ul className={`${styles.sectionListSections}, ${styles.listReset}`} data-element='sections'>
+        <ul data-element='sections'>
           {sections.map(renderSection)}
         </ul>
 
