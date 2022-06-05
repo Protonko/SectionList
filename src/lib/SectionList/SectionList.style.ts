@@ -7,6 +7,10 @@ const sharedStyle = css`
   list-style: none;
 `
 
+export const SectionList = styled.div`
+  padding-bottom: 1px;
+`
+
 export const SectionHeader = styled.div`
   margin-bottom: 10px;
   padding: 5px;
