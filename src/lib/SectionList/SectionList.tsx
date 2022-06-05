@@ -1,6 +1,6 @@
 import {useRef, ReactNode, ReactElement, useEffect} from 'react'
-import './SectionList.css'
 import {genericMemo} from '../genericMemo'
+import {Sections, SectionHeader, SectionData} from './SectionList.style'
 
 export interface Section<T> {
   title: string,
@@ -85,11 +85,11 @@ export const SectionList = genericMemo(<T,>({
       return (
         <li key={data.title} data-element='section'>
           {_renderSectionHeader(data)}
-          <div data-element='section-header'>
-            <ul data-element='section-data'>
+          <SectionHeader data-element='section-header'>
+            <SectionData data-element='section-data'>
               {data.data.map(renderSectionItem)}
-            </ul>
-          </div>
+            </SectionData>
+          </SectionHeader>
         </li>
       )
     }
@@ -100,9 +100,9 @@ export const SectionList = genericMemo(<T,>({
   if (sections.length) {
     return (
       <div className={sectionListClassNames} data-element='section-list'>
-        <ul data-element='sections'>
+        <Sections data-element='sections'>
           {sections.map(renderSection)}
-        </ul>
+        </Sections>
 
         {shouldLoadData ? <div ref={scrollIndicator} /> : null}
         <>{ListFooterComponent}</>
