@@ -44,7 +44,7 @@ export const SectionList = genericMemo(<T,>({
   }, [])
 
   const handleEndReached = (entries: IntersectionObserverEntry[]) => {
-    if (onEndReached && entries[0].isIntersecting) {
+    if (onEndReached && shouldLoadData && entries[0].isIntersecting) {
       onEndReached()
     }
   }
@@ -106,8 +106,7 @@ export const SectionList = genericMemo(<T,>({
         <Sections data-element='sections'>
           {sections.map(renderSection)}
         </Sections>
-
-        {shouldLoadData ? <div ref={setRef} /> : null}
+        <div ref={setRef} />
         <>{ListFooterComponent}</>
       </div>
     )
