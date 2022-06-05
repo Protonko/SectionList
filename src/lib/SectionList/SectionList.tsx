@@ -1,6 +1,6 @@
 import {useRef, ReactNode, ReactElement, useEffect} from 'react'
 import styles from './SectionList.module.css'
-import {genericMemo} from 'lib'
+import {genericMemo} from '../genericMemo'
 
 export interface Section<T> {
   title: string,
