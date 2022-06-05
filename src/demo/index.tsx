@@ -1,6 +1,7 @@
 import type {DemoData} from './demoData'
 import {useCallback, useEffect, useState} from 'react'
-import {Loader, Section, SectionList} from 'lib'
+import {Section, SectionList} from 'lib'
+import {Loader} from './Loader'
 import styles from './DemoSectionList.module.css'
 
 const LIMIT = 10
