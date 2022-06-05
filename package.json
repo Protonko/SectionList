@@ -8,7 +8,7 @@
   },
   "private": false,
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "dependencies": {
     "react": "18.1.0",
     "react-dom": "18.1.0",
