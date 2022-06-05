@@ -8,7 +8,7 @@
   },
   "private": false,
   "license": "MIT",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "dependencies": {
     "react": "18.1.0",
     "react-dom": "18.1.0",
@@ -17,7 +17,7 @@
   "scripts": {
     "prepublish": "tsc",
     "start": "react-scripts start",
-    "build": "npm run prepublish && babel package.json LICENSE README.md src/lib --out-dir dist --copy-files && rm -rf dist/demo rm -rf dist/lib && rm -rf dist/App.d.ts && rm -rf dist/App.js",
+    "build": "npm run prepublish && rm -rf index.* && babel package.json LICENSE README.md src/lib --out-dir dist --copy-files && rm -rf dist/demo rm -rf dist/lib && rm -rf dist/App.*",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
