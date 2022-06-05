@@ -1,12 +1,25 @@
 .card {
+    height: 100px;
     padding: 20px;
     border: 2px solid cadetblue;
+    box-sizing: border-box;
 }
 
 .cardTitle {
     font-weight: bold;
+    display: block;
+}
+
+.cardDescription {
+    display: block;
+    color: darkslateblue;
 }
 
 .sectionHeader {
     color: navy;
+}
+
+.sectionList [data-element="section-data"] {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

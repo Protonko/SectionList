@@ -1,6 +1,6 @@
 import type {DemoData} from './demoData'
-import {Loader, Section, SectionList} from '../lib'
 import {useCallback, useEffect, useState} from 'react'
+import {Loader, Section, SectionList} from 'lib'
 import styles from './DemoSectionList.module.css'
 
 const LIMIT = 10
@@ -8,7 +8,7 @@ const MAX_COUNT = 200
 const URL = 'https://jsonplaceholder.typicode.com/todos?_start=0&_limit='
 
 const EmptyComponent = () => {
-  return <div>Empty</div>
+  return <span>Empty</span>
 }
 
 const mapToSection = (demoData: DemoData[]) => {
@@ -49,6 +49,7 @@ export const DemoSectionList = () => {
     return (
       <div className={styles.card}>
         <span className={styles.cardTitle}>{elem.title}</span>
+        <span className={styles.cardDescription}>user: {elem.userId}</span>
       </div>
     )
   }, [sections])
@@ -71,7 +72,7 @@ export const DemoSectionList = () => {
 
   return (
     <SectionList<DemoData>
-      className="additional-class-name"
+      className={styles.sectionList}
       ListEmptyComponent={<EmptyComponent />}
       ListFooterComponent={renderLoader()}
       keyExtractor={keyExtractor}
