@@ -1,4 +1,4 @@
-import {useRef, ReactNode, ReactElement, useEffect} from 'react'
+import {useRef, ReactNode, ReactElement, useEffect, useState, useCallback} from 'react'
 import {genericMemo} from '../genericMemo'
 import {SectionList as SectionListStyled, Sections, SectionHeader, SectionData} from './SectionList.style'
 
@@ -38,7 +38,11 @@ export const SectionList = genericMemo(<T,>({
     sectionListClassNames += ' ' + className
   }
 
-  const scrollIndicator = useRef<HTMLDivElement>(null)
+  const [scrollIndicator, setScrollIndicator] = useState<null | HTMLDivElement>(null)
+
+  const scrollIndicatorRef = useCallback((node: HTMLDivElement) => {
+    setScrollIndicator(node)
+  }, [])
 
   const handleEndReached = (entries: IntersectionObserverEntry[]) => {
     if (onEndReached && entries[0].isIntersecting) {
@@ -49,8 +53,8 @@ export const SectionList = genericMemo(<T,>({
   const observer = useRef<IntersectionObserver>()
 
   const createObserver = () => {
-    if (scrollIndicator.current && observer.current) {
-      observer.current.observe(scrollIndicator.current)
+    if (scrollIndicator && observer.current) {
+      observer.current.observe(scrollIndicator)
     }
   }
 
@@ -62,7 +66,7 @@ export const SectionList = genericMemo(<T,>({
     createObserver()
 
     return () => observer.current?.disconnect()
-  }, [scrollIndicator.current])
+  }, [scrollIndicator])
 
   const renderSectionItem = (value: T, index: number, array: T[]) => {
     return (
@@ -107,7 +111,7 @@ export const SectionList = genericMemo(<T,>({
         <Sections data-element='sections'>
           {sections.map(renderSection)}
         </Sections>
-        {shouldLoadData ? <div ref={scrollIndicator} /> : null}
+        {shouldLoadData ? <div ref={scrollIndicatorRef} /> : null}
         <>{ListFooterComponent}</>
       </SectionListStyled>
     )
