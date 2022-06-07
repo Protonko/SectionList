@@ -46,13 +46,17 @@ export const SectionList = genericMemo(<T,>({
     }
   }
 
-  const observer = useRef(new IntersectionObserver(handleEndReached, {threshold: onEndReachedThreshold}))
+  const observer = useRef<IntersectionObserver>()
 
   const createObserver = () => {
-    if (scrollIndicator.current) {
+    if (scrollIndicator.current && observer.current) {
       observer.current.observe(scrollIndicator.current)
     }
   }
+
+  useEffect(() => {
+    observer.current = new IntersectionObserver(handleEndReached, {threshold: onEndReachedThreshold})
+  }, [])
 
   useEffect(() => {
     createObserver()
