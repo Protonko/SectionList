@@ -1,31 +1,29 @@
-import styled, {css} from 'styled-components'
+const sharedStyle = {
+  marginTop: 0,
+  marginBottom: 0,
+  paddingLeft: 0,
+  listStylType: 'none',
+}
 
-const sharedStyle = css`
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-`
+export const sectionListStyle = {
+  paddingBottom: 1,
+}
 
-export const SectionList = styled.div`
-  padding-bottom: 1px;
-`
+export const sectionHeaderStyle = {
+  marginBottom: 10,
+  padding: 5,
+}
 
-export const SectionHeader = styled.div`
-  margin-bottom: 10px;
-  padding: 5px;
-`;
+export const sectionDataStyle = {
+  ...sharedStyle,
+  display: 'grid',
+  gap: 10,
+  width: '100%',
+}
 
-export const SectionData = styled.ul`
-  display: grid;
-  gap: 10px;
-  width: 100%;
-  ${sharedStyle}
-`;
-
-export const Sections = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  ${sharedStyle}
-`
+export const sectionsStyle = {
+  ...sharedStyle,
+  display: 'flex',
+  'flex-direction': 'column',
+  gap: 30,
+}

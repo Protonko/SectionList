@@ -2,7 +2,7 @@ import type {DemoData} from './demoData'
 import {useCallback, useEffect, useState} from 'react'
 import {Section, SectionList} from 'lib'
 import {Loader} from './Loader'
-import './DemoSectionList.css'
+import './style.css'
 
 const LIMIT = 10
 const MAX_COUNT = 200

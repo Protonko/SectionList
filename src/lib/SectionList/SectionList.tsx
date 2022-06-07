@@ -1,6 +1,5 @@
 import {useRef, ReactNode, ReactElement, useEffect, useState, useCallback} from 'react'
-import {genericMemo} from '../genericMemo'
-import {SectionList as SectionListStyled, Sections, SectionHeader, SectionData} from './SectionList.style'
+import {sectionDataStyle, sectionHeaderStyle, sectionListStyle, sectionsStyle, genericMemo} from 'lib'
 
 export interface Section<T> {
   title: string,
@@ -93,11 +92,11 @@ export const SectionList = genericMemo(<T,>({
       return (
         <li key={data.title} data-element='section'>
           {_renderSectionHeader(data)}
-          <SectionHeader data-element='section-header'>
-            <SectionData data-element='section-data'>
+          <div style={sectionHeaderStyle} data-element='section-header'>
+            <ul style={sectionDataStyle} data-element='section-data'>
               {data.data.map(renderSectionItem)}
-            </SectionData>
-          </SectionHeader>
+            </ul>
+          </div>
         </li>
       )
     }
@@ -107,13 +106,13 @@ export const SectionList = genericMemo(<T,>({
 
   if (sections.length) {
     return (
-      <SectionListStyled className={sectionListClassNames} data-element='section-list'>
-        <Sections data-element='sections'>
+      <div style={sectionListStyle} className={sectionListClassNames} data-element='section-list'>
+        <ul style={sectionsStyle} data-element='sections'>
           {sections.map(renderSection)}
-        </Sections>
+        </ul>
         {shouldLoadData ? <div ref={scrollIndicatorRef} /> : null}
         <>{ListFooterComponent}</>
-      </SectionListStyled>
+      </div>
     )
   } else if (ListEmptyComponent) {
     return ListEmptyComponent
