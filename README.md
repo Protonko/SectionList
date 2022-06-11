@@ -1,6 +1,6 @@
 # SectionList
-![](https://badge.fury.io/js/@protonko%2Fsection-list.svg)
-![](https://img.shields.io/badge/Size-12.2%20kB-green)
+[![npm version](https://img.shields.io/badge/npm%20package-0.1.31-green)](https://www.npmjs.com/package/@protonko/section-list)
+[![npm size](https://img.shields.io/badge/size-16.4%20kB-green)](https://www.npmjs.com/package/@protonko/section-list)
 
 Component for rendering sectioned lists for plain React.
 <br>
