@@ -2,9 +2,13 @@
 ![](https://badge.fury.io/js/@protonko%2Fsection-list.svg)
 ![](https://img.shields.io/badge/Size-12.2%20kB-green)
 
-Component for rendering sectioned lists for plain React. 
+Component for rendering sectioned lists for plain React.
 <br>
 Created by analogy with React Native SectionList.
+
+[Demo](https://protonko.github.io/section-list/)
+<br>
+[Code example](https://github.com/Protonko/section-list/blob/master/src/demo/index.tsx)
 
 ![](https://github.com/Protonko/section-list/blob/master/public/example.gif?raw=true)
 
