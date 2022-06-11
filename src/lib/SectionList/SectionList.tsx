@@ -1,5 +1,5 @@
 import {useRef, ReactNode, ReactElement, useEffect, useState, useCallback} from 'react'
-import {genericMemo} from '../genericMemo';
+import {genericMemo} from '../genericMemo'
 import {sectionDataStyle, sectionHeaderStyle, sectionListStyle, sectionsStyle, } from './SectionList.style'
 
 export interface Section<T> {
