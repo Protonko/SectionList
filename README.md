@@ -1,6 +1,6 @@
 # SectionList
-[![npm version](https://img.shields.io/badge/npm%20package-0.1.31-green)](https://www.npmjs.com/package/@protonko/section-list)
-[![npm size](https://img.shields.io/badge/size-16.4%20kB-green)](https://www.npmjs.com/package/@protonko/section-list)
+[![npm version](https://img.shields.io/badge/npm%20package-0.1.32-green)](https://www.npmjs.com/package/@protonko/section-list)
+[![npm size](https://img.shields.io/badge/size-16.5%20kB-green)](https://www.npmjs.com/package/@protonko/section-list)
 
 Component for rendering sectioned lists for plain React.
 <br>
@@ -78,7 +78,7 @@ The component expects a generic-type <span id="genericT">T</span> that describes
 | className             | Used to override a component's styles using custom classes.                                                                | string                                                                        | no       |
 | onEndReached          | Called once when the scroll position gets within `onEndReachedThreshold` of the rendered content.                          | () => void                                                                    | no       |
 | onEndReachedThreshold | How far from the end the bottom edge of the list must be from the end of the content to trigger the onEndReached callback. | number                                                                        | no       |
-| renderSectionHeader   | Rendered at the top of each section.                                                                                       | (title: {title: string, data: [T](#genericT)[]}) => ReactNode                 | no       |
-| shouldLoadData        | Indicate whether to create an IntersectionObserver.                                                                        | boolean                                                                       | no       |
+| renderSectionHeader   | Rendered at the top of each section.                                                                                       | (section: {title: string, data: [T](#genericT)[]}) => ReactNode               | no       |
+| shouldLoadData        | Indicated whether to create an IntersectionObserver.                                                                       | boolean                                                                       | no       |
 | ListEmptyComponent    | Rendered when the list is empty.                                                                                           | ReactElement                                                                  | no       |
 | ListFooterComponent   | Rendered at the very end of the list.                                                                                      | ReactElement                                                                  | no       |
